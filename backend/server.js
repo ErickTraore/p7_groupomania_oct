@@ -1,7 +1,7 @@
 // imports
 var express = require('express');
 var bodyParser = require('body-parser');
-// var apiRouter = require('./apiRouter').router;
+var router = require('./apiRouter').router;
 var server = express();
 
 //instantiation
@@ -19,13 +19,13 @@ server.use(bodyParser.json());
 //Configure routes
 server.get('/', function(req, res) {
     res.setHeader('Content-Type', 'text/html');
-    res.status(200).send('<h1>Bonjour sur notre super server BRANCH2 SUR LE PORT 8080</h1>');
+    res.status(200).send('<h1>api-groupomania </h1> <h3> Bonjour sur notre super server(port: 8080) </h3 > ');
 
 });
 
-// server.use('/api/', apiRouter);
+server.use('/api/', router);
 
 // Launch server
-server.listen(8090, function() {
-    console.log('Server en écoute sur P7_RETROSERVER)');
+server.listen(8080, function() {
+    console.log('Server en écoute sur P7_GROUPOMANIA)');
 });
