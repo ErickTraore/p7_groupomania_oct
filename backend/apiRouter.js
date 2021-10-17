@@ -1,7 +1,7 @@
 var express = require('express');
 var usersCtrl = require('./routes/usersCtrl');
 var messagesCtrl = require('./routes/messagesCtrl');
-// var likesCtrl = require('./routes/likesCtrl');
+var likesCtrl = require('./routes/likesCtrl');
 // const auth = require('./middleware/auth');
 const router = express.Router();
 
@@ -18,9 +18,9 @@ exports.router = (function() {
     router.post('/messages/new/', messagesCtrl.createMessage);
     router.get('/messages/', messagesCtrl.listMessages);
 
-    // // Likes
-    // router.post('/messages/:messageId/vote/like', likesCtrl.likePost);
-    // router.post('/messages/:messageId/vote/dislike', likesCtrl.dislikePost);
+    //  Likes
+    router.post('/messages/:messageId/vote/like', likesCtrl.likePost);
+    router.post('/messages/:messageId/vote/dislike', likesCtrl.dislikePost);
     return router;
 
 })();

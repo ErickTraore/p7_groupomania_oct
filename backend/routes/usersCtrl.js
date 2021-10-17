@@ -143,7 +143,6 @@ module.exports = {
             }
         });
         next;
-
     },
     getUserProfile: function(req, res) {
         // Getting auth header
